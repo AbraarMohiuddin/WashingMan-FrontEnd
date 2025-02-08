@@ -12,6 +12,7 @@ import { Ionicons } from "@expo/vector-icons";
 import MachineCard from "../components/MachineCard";
 import { fetchMachines } from "../../api/machines";
 import { useFocusEffect } from "@react-navigation/native";
+import { MaterialIcons } from "@expo/vector-icons";
 
 export default function HomeScreen() {
   const [machines, setMachines] = useState([]);
@@ -52,8 +53,8 @@ export default function HomeScreen() {
     <LinearGradient colors={["#2193b0", "#6dd5ed"]} style={styles.container}>
       <StatusBar translucent backgroundColor="transparent" />
       <Animated.View style={[styles.headerContainer, { opacity: fadeAnim }]}>
-        <Ionicons
-          name="ios-car-wash"
+        <MaterialIcons
+          name="local-laundry-service"
           size={32}
           color="#fff"
           style={styles.headerIcon}

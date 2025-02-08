@@ -1,15 +1,15 @@
 import React from "react";
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import { useRouter } from "expo-router";
-import { Ionicons } from "@expo/vector-icons";
+import { MaterialIcons } from "@expo/vector-icons";
 import { Machine } from "../../data/machines";
 
 export default function MachineCard({ machine }: { machine: Machine }) {
   const router = useRouter();
 
-  // Choose an icon based on machine type
+  // Choose an icon based on machine type using Material Icons
   const machineIcon =
-    machine.type.toLowerCase() === "washer" ? "ios-water" : "ios-flame";
+    machine.type.toLowerCase() === "washer" ? "local-laundry-service" : "dry";
 
   return (
     <View style={styles.card}>
@@ -18,7 +18,7 @@ export default function MachineCard({ machine }: { machine: Machine }) {
         style={styles.cardContent}
         onPress={() => router.push(`/details/${machine.id}`)}
       >
-        <Ionicons
+        <MaterialIcons
           name={machineIcon}
           size={24}
           color="#6dd5ed"
@@ -47,6 +47,7 @@ export default function MachineCard({ machine }: { machine: Machine }) {
   );
 }
 
+// Keep the styles the same
 const styles = StyleSheet.create({
   card: {
     backgroundColor: "#fff",
